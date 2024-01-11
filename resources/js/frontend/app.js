@@ -26,8 +26,9 @@ app.use(ToastPlugin,  { position: "top-right"});
 app.mount('#app');
 app.mixin({
     methods: {
-        getPrice: function (product) {
-            let price = parseInt(product.variants[0].price);
+        getPrice: function (product, varient_id) {
+            let varientIndex = product.variants.map(v => v.id).indexOf(varient_id)
+            let price = parseInt(product.variants[varientIndex].price);
             let reduce_price = 0
             if(product.discount_type == 1){
                 let discountAmount = parseInt(price) / 100 * parseInt(product.discount_amount)

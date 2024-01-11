@@ -15,10 +15,11 @@
                         <nav>
                             <ul>
                                 <li><router-link :to="{name: 'dashboard'}">Home </router-link></li>
-                                <li><router-link :to="{name: 'products'}"> Shop</router-link></li>
-                                <li v-for="c in settings?.category">
-                                    <router-link :to="{name: 'productCategory', params: { slug: c.slug }}" :key="c.slug">
-                                    {{ c.name }}</router-link>
+                                <li class="parent-menu position-relative"><router-link :to="{name: 'products'}"> Shop</router-link>
+                                    <ul class="sub-menu">
+                                        <li v-for="c in settings?.category"><router-link :to="{name: 'productCategory', params: { slug: c.slug }}">
+                                            {{ c.name }}</router-link></li>
+                                    </ul>
                                 </li>
                             </ul>
                         </nav>
@@ -466,6 +467,21 @@ export default {
 }
 .header-right-wrap{
     margin-top: 0!important;
+}
+.parent-menu{
+    .sub-menu {
+        position: absolute;
+        opacity: 0;
+        height: 0;
+        transition: 800ms;
+    }
+    &:hover{
+       .sub-menu{
+           opacity: 1;
+           height: auto;
+           transition: 800ms;
+       }
+    }
 }
 
 </style>

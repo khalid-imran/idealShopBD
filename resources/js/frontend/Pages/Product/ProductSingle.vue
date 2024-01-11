@@ -45,8 +45,8 @@
                     <div class="product-details-content ml-70">
                         <h2>{{ singleProduct.title }}</h2>
                         <div class="product-details-price">
-                            <span>৳ {{getPrice(singleProduct).reduce_price}} </span>
-                            <span class="old" v-if="singleProduct.discount_type != 2">৳ {{ getPrice(singleProduct).price }}</span>
+                            <span>৳ {{getPrice(singleProduct, cart.variant_id).reduce_price}} </span>
+                            <span class="old" v-if="singleProduct.discount_type != 2">৳ {{ getPrice(singleProduct, cart.variant_id).price }}</span>
                         </div>
 <!--                        <div class="pro-details-rating-wrap">-->
 <!--                            <div class="pro-details-rating">-->

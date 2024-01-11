@@ -10,7 +10,7 @@
                                 <span v-else class="icon-name">{{settings?.website?.name}}</span>
                             </router-link>
                         </div>
-                        <p>© {{ new Date().getFullYear() }} <router-link :to="{name: 'dashboard'}">Diivaa</router-link>.<br> All Rights Reserved</p>
+                        <p>© {{ new Date().getFullYear() }} <router-link :to="{name: 'dashboard'}">Ideal Food Service BD</router-link>.<br> All Rights Reserved</p>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 col-sm-4">
