@@ -14,4 +14,8 @@ class SpaController extends Controller
     {
         return view('frontend');
     }
+    public function peanutButter()
+    {
+        return view('peanut');
+    }
 }
